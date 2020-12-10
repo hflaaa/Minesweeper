@@ -33,13 +33,13 @@
     let randarArr = [];
     let mainDom = document.getElementById('main');
 
-    // 记录当前有多少个旗子
+   
     let flagCount = 0;
     window.onload = function () {
         init();
     }
 
-    // 渲染
+ 
     function render() {
         let table = document.createElement('table');
         for (let i = 0; i < HEIGHT; i++) {
@@ -49,12 +49,12 @@
                 td.className = 'block';
                 td.style.backgroundColor = '#BDBDBD';
                 td.id = i + '-' + j;
-                // 点击事件
+          
                 td.onclick = function () {
                     click(i, j);
                     success();
                 }
-                // 右击插旗
+               
                 td.oncontextmenu = function (){
                     insertFlag(i, j);
                     success();
@@ -81,7 +81,7 @@
         render();
     }
 
-    // 创建雷
+
     function createRandar() {
         let count = 0;
         let i, j;
@@ -95,7 +95,7 @@
         }
     }
 
-    // 计算每个方格周围有多少个雷
+  
     function roundRandarCount() {
         // 记录有多少个雷
         let count = 0;
@@ -141,7 +141,7 @@
         }
     }
 
-    // 点击事件
+
     function click(i, j) {
         let currentDom = document.getElementById(i + '-' + j);
         let current = randarArr[i][j];
@@ -155,7 +155,7 @@
         }
     }
 
-    // 递归显示周围没有雷的格子
+    
     function show(i, j) {
         let currentDom = document.getElementById(i + '-' + j);
         let current = randarArr[i][j];
@@ -201,7 +201,7 @@
         }
     }
 
-    // 显示所有雷
+
     function showAllRandar() {
         for (let i = 0; i < HEIGHT; i++) {
             for (let j = 0; j < WIDTH; j++) {
@@ -231,7 +231,7 @@
         }
     }
 
-    // 判断游戏是否结束 
+ 
     function success() {
         for (let i = 0; i < HEIGHT; i++) {
             for (let j = 0; j < WIDTH; j++) {
